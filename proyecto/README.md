@@ -1,7 +1,7 @@
 # Diplomado en Big Data e Inteligencia Artificial   
 ## Sistema de segmentación de usuarios   
 ## FASTPAY   
-**Integrantes grupo 6:**
+**Integrantes grupo 6:**   
 Maria Dolores Robalino   
 Roxana Oñate Lazo   
 Gerardo Villalba   
@@ -53,18 +53,18 @@ Decision de negocio:
 •	El porcentaje de anomalías dentro de cada segmento fue: segmento 0: 8,47%; 1: 12,33%; 2: 2,48%; 3: 12,12%; 4: 9,30%; 5: 0,39%; 6: 11,86%; y 7: 8,51%.
 El usuario señalado como más anómalo fue U0544, con score 0,6167. En el análisis SHAP del cuaderno, las variables destacadas fueron provincia (Manabí), distancia media, monto medio y ratio monto/ingreso. Estos resultados deben entenderse como explicación del comportamiento atípico según el modelo, no como evidencia de fraude ni como relación causal.
 
-**4.	Recomendaciones con cifras**
+**4.	Recomendaciones con cifras**   
 
-| Segmento | Lectura del perfil | Acción | propuesta |
-|---|---|---|
-| 1	| Mayor ingreso, monto medio y promedio de fraude. |	Verificación reforzada y monitoreo continuo; considerar revisión adicional para transacciones de monto elevado. |
-| 0	| Riesgo operativo y fraude medio elevados.	| Verificación adicional y revisión de señales operativas. |
-| 7	| Perfil mixto; promedio de fraude 0,45. |	Monitoreo medio y seguimiento de comportamiento; evitar incentivos automáticos sin revisar riesgo. |
-| 5	| Mayor grupo (33,4%); menor riesgo operativo promedio y baja proporción de anomalías.	| Fidelización y cashback, sujeto a controles habituales. |
-| 4	| Menor promedio de fraude. |	Campañas de reactivación de bajo costo. |
-| 2	| Grupo numeroso (26,1%) y anomalías relativamente bajas.	| Campañas de reactivación y ofertas generales de bajo costo. |
-| 3	| Grupo pequeño y proporción de anomalías elevada (12,12%).	| Monitoreo focalizado antes de definir incentivos. |
-| 6	| Ingreso medio algo superior al promedio y anomalías de 11,86%.	| Oferta personalizada condicionada a controles de riesgo; no aumentar límites automáticamente. |
+| Segmento | Lectura del perfil | Acción | propuesta |   
+|---|---|---|   
+| 1	| Mayor ingreso, monto medio y promedio de fraude. |	Verificación reforzada y monitoreo continuo; considerar revisión adicional para transacciones de monto elevado. |   
+| 0	| Riesgo operativo y fraude medio elevados.	| Verificación adicional y revisión de señales operativas. |   
+| 7	| Perfil mixto; promedio de fraude 0,45. |	Monitoreo medio y seguimiento de comportamiento; evitar incentivos automáticos sin revisar riesgo. |   
+| 5	| Mayor grupo (33,4%); menor riesgo operativo promedio y baja proporción de anomalías.	| Fidelización y cashback, sujeto a controles habituales. |   
+| 4	| Menor promedio de fraude. |	Campañas de reactivación de bajo costo. |   
+| 2	| Grupo numeroso (26,1%) y anomalías relativamente bajas.	| Campañas de reactivación y ofertas generales de bajo costo. |   
+| 3	| Grupo pequeño y proporción de anomalías elevada (12,12%).	| Monitoreo focalizado antes de definir incentivos. |   
+| 6	| Ingreso medio algo superior al promedio y anomalías de 11,86%.	| Oferta personalizada condicionada a controles de riesgo; no aumentar límites automáticamente. |   
 
 El cuaderno calcula un escenario económico ilustrativo para la revisión de anomalías: costo de revisión de USD 117 (39 × USD 3), ahorro estimado de USD 2.430 (27 × 60% × USD 150) y beneficio neto de USD 2.313. Estas cifras dependen de supuestos definidos para el ejercicio (60% de detección y USD 150 de pérdida por fraude) y no constituyen ahorro observado ni garantía de prevención.
 
