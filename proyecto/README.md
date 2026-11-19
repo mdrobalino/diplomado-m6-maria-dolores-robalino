@@ -1,9 +1,11 @@
 # Diplomado en Big Data e Inteligencia Artificial   
 ## Sistema de segmentación de usuarios FASTPAY   
-**Integrantes grupo 6:**   
+**Integrantes grupo 6:**
+```
    Maria Dolores Robalino   
    Roxana Oñate Lazo   
    Gerardo Villalba   
+```
 
 **1.	Problema y datos**   
 
