@@ -66,6 +66,14 @@ El usuario señalado como más anómalo fue U0544, con score 0,6167. En el anál
 | 3	| Grupo pequeño y proporción de anomalías elevada (12,12%).	| Monitoreo focalizado antes de definir incentivos. |   
 | 6	| Ingreso medio algo superior al promedio y anomalías de 11,86%.	| Oferta personalizada condicionada a controles de riesgo; no aumentar límites automáticamente. |   
 
+## Evaluación
+| Componente | Qué se entrega | Plazo |
+|---|---|---|
+| Taller 1 · 20 pts | `talleres/clase1.ipynb`, `clase2.ipynb`, `clase3.ipynb` | El mismo día de cada clase, **hasta las 22:30** |
+| Taller 2 · 20 pts | `talleres/clase4.ipynb`, `clase5.ipynb`, `clase6.ipynb` | El mismo día de cada clase, **hasta las 22:30** |
+| Deber · 20 pts | `deber/deber.ipynb` | Domingo 15-nov, 11:00 |
+| Proyecto · 40 pts | carpeta `proyecto/` (repo del grupo) + defensa | Jueves 19-nov, 18:00 |
+
 El cuaderno calcula un escenario económico ilustrativo para la revisión de anomalías: costo de revisión de USD 117 (39 × USD 3), ahorro estimado de USD 2.430 (27 × 60% × USD 150) y beneficio neto de USD 2.313. Estas cifras dependen de supuestos definidos para el ejercicio (60% de detección y USD 150 de pérdida por fraude) y no constituyen ahorro observado ni garantía de prevención.
 
 **5.	Limitaciones y próximos pasos**
