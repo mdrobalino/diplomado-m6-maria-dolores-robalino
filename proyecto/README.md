@@ -9,10 +9,10 @@ Gerardo Villalba
 **1.	Problema y datos**   
 
 El proyecto desarrolla una propuesta de segmentación de usuarios para FASTPAY a partir de sus perfiles demográficos, económicos y de comportamiento transaccional. El propósito es identificar grupos con características similares, reconocer perfiles atípicos y traducir los resultados en acciones diferenciadas de servicio, fidelización y monitoreo. Se trata de un enfoque no supervisado: los algoritmos de clustering no predicen directamente si un usuario cometerá fraude.
-La base de trabajo contiene 775 perfiles de usuario, construidos a partir de 2.996 transacciones limpias descargadas desde el servicio del proyecto. El diagnóstico reporta ausencia de valores nulos y de valores negativos en las variables numéricas revisadas. Se consideran variables como edad, ingreso mensual, antigüedad, número de transacciones, monto medio, actividad nocturna, uso de dispositivos nuevos, distancia media e intentos medios.
-•	Se identificó una correlación elevada entre monto medio y monto máximo (aproximadamente 0,85); para evitar redundancia, monto máximo se excluyó de las variables de clustering y se conservó para interpretación.
-•	Se construyeron tres variables derivadas: ratio_monto_ingreso, intensidad_transaccional e indice_riesgo_operativo.
-•	La variable fraudes no se incorporó como característica de agrupamiento; se utilizó posteriormente para describir la incidencia de fraude por segmento.
+La base de trabajo contiene 775 perfiles de usuario, construidos a partir de 2.996 transacciones limpias descargadas desde el servicio del proyecto. El diagnóstico reporta ausencia de valores nulos y de valores negativos en las variables numéricas revisadas. Se consideran variables como edad, ingreso mensual, antigüedad, número de transacciones, monto medio, actividad nocturna, uso de dispositivos nuevos, distancia media e intentos medios.   
+•	Se identificó una correlación elevada entre monto medio y monto máximo (aproximadamente 0,85); para evitar redundancia, monto máximo se excluyó de las variables de clustering y se conservó para interpretación.   
+•	Se construyeron tres variables derivadas: ratio_monto_ingreso, intensidad_transaccional e indice_riesgo_operativo.   
+•	La variable fraudes no se incorporó como característica de agrupamiento; se utilizó posteriormente para describir la incidencia de fraude por segmento.   
 •	Las variables categóricas de provincia se transformaron mediante variables indicadoras y las características se estandarizaron con StandardScaler.
 
 **2.	Modelo comparados (tabla de métricas)**
@@ -32,20 +32,17 @@ La silueta final de K-Means y Ward (aproximadamente 0,19–0,20) indica una sepa
 **3.	Qué explica el resultado (variables, segmentos, incertidumbre)**
 
 Los promedios siguientes describen cada grupo obtenido con K-Means. El porcentaje representa la participación de usuarios en la base. La columna de fraude corresponde al promedio de fraudes por usuario en el segmento, no a una probabilidad individual.
-Segmento	Usuarios	Base	Ingreso medio
-(USD)	Monto medio
-(USD)	Transac.
-medias	Riesgo
-operativo	Fraudes
-medios
-0	59	7,6%	888,14	94,34	4,08	0,43	0,56
-1	73	9,4%	1.616,40	215,39	3,77	0,52	0,74
-2	202	26,1%	910,81	68,49	3,89	0,32	0,36
-3	33	4,3%	912,75	90,79	3,97	0,32	0,27
-4	43	5,5%	898,70	60,98	3,63	0,35	0,14
-5	259	33,4%	884,58	64,30	3,92	0,24	0,29
-6	59	7,6%	955,99	78,40	3,37	0,30	0,36
-7	47	6,1%	947,12	83,65	4,09	0,34	0,45
+
+| Segmento | Usuarios | Base | Ingreso medio (USD) | Monto medio (USD) | Transac. medias | Riesgo operativo | Fraudes medios |
+|---|---|---| 
+|0|	59|	7,6%|	888,14|	94,34|	4,08|	0,43|	0,56|
+|1|	73| 9,4%|	1.616,40|	215,39|	3,77|	0,52|	0,74|
+|2|	202|	26,1%|	910,81|	68,49|	3,89|	0,32|	0,36|
+|3|	33|	4,3%|	912,75|	90,79|	3,97|	0,32|	0,27|
+|4|	43|	5,5%|	898,70|	60,98|	3,63|	0,35|	0,14|
+|5|	259|	33,4%|	884,58|	64,30|	3,92|	0,24|	0,29|
+|6|	59|	7,6%|	955,99|	78,40|	3,37|	0,30|	0,36|
+|7|	47|	6,1%|	947,12|	83,65|	4,09|	0,34|	0,45|
 
 Decision de negocio:
 •	El segmento 1 presenta el mayor ingreso medio (USD 1.616,40), el mayor monto medio (USD 215,39) y el mayor promedio de fraudes (0,74 por usuario). El análisis del cuaderno indica que reúne 54 de los 290 fraudes observados (18,6%) con el 9,4% de los usuarios.
