@@ -5,7 +5,6 @@
    Maria Dolores Robalino   
    Roxana Oñate Lazo   
    Gerardo Villalba   
-```
 
 **1.	Problema y datos**   
 
