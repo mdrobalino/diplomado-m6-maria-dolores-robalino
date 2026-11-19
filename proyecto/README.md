@@ -18,11 +18,12 @@ La base de trabajo contiene 775 perfiles de usuario, construidos a partir de 2.9
 **2.	Modelo comparados (tabla de métricas)**
 
 Se compararon tres métodos de agrupamiento y un método complementario de detección de anomalías. K-Means se seleccionó como solución operativa; Ward se utilizó como contraste jerárquico y DBSCAN para explorar agrupaciones basadas en densidad. Isolation Forest se aplicó por separado para marcar usuarios con perfiles atípicos.
-Método	Resultado	Lectura
-K-Means	8 grupos · silueta 0,1879	Modelo principal seleccionado por facilidad de asignación de nuevos usuarios y lectura de centroides.
-Jerárquico Ward	8 grupos · silueta 0,2010	Obtuvo una silueta ligeramente mayor; se conserva como contraste.
-DBSCAN	5 clusters · 32 usuarios ruido (4,1%)	Útil para detectar densidades y observaciones aisladas; no se eligió como segmentación principal.
-Isolation Forest	39 anomalías (5,03%)	Detector complementario de perfiles atípicos; no es un algoritmo de segmentación.
+
+| Método | Resultado | Lectura
+| K-Means | 8 grupos · silueta 0,1879	| Modelo principal seleccionado por facilidad de asignación de nuevos usuarios y lectura de centroides.|
+| Jerárquico Ward | 8 grupos · silueta 0,2010	| Obtuvo una silueta ligeramente mayor; se conserva como contraste.|
+| DBSCAN | 5 clusters · 32 usuarios ruido (4,1%) | Útil para detectar densidades y observaciones aisladas; no se eligió como segmentación principal.|
+| Isolation Forest | 39 anomalías (5,03%) | Detector complementario de perfiles atípicos; no es un algoritmo de segmentación.|
 
 La búsqueda de K-Means evaluó valores de k entre 2 y 11 y seleccionó k = 8 por la mayor silueta observada en esa búsqueda (0,2016). En el ajuste final, la silueta reportada fue 0,1879. La concordancia entre K-Means y Ward fue ARI = 0,754, lo que muestra una similitud apreciable entre las particiones, aunque no prueba por sí sola que los grupos estén claramente separados.
 La silueta final de K-Means y Ward (aproximadamente 0,19–0,20) indica una separación limitada y posible superposición entre perfiles. Por ello, los ocho grupos deben interpretarse como segmentos operativos útiles para explorar diferencias, no como categorías naturales perfectamente delimitadas. La proyección PCA en dos dimensiones se utilizó para visualizar la distribución de los grupos.
@@ -65,15 +66,6 @@ El usuario señalado como más anómalo fue U0544, con score 0,6167. En el anál
 | 2	| Grupo numeroso (26,1%) y anomalías relativamente bajas. | Campañas de reactivación y ofertas generales de bajo costo.|
 | 3	| Grupo pequeño y proporción de anomalías elevada (12,12%). | Monitoreo focalizado antes de definir incentivos.|
 | 6	| Ingreso medio algo superior al promedio y anomalías de 11,86%. | Oferta personalizada condicionada a controles de riesgo; no aumentar límites automáticamente.|
-
-## Evaluación
-
-| Componente | Qué se entrega | Plazo |
-|---|---|---|
-| Taller 1 · 20 pts | `talleres/clase1.ipynb`, `clase2.ipynb`, `clase3.ipynb` | El mismo día de cada clase, **hasta las 22:30** |
-| Taller 2 · 20 pts | `talleres/clase4.ipynb`, `clase5.ipynb`, `clase6.ipynb` | El mismo día de cada clase, **hasta las 22:30** |
-| Deber · 20 pts | `deber/deber.ipynb` | Domingo 15-nov, 11:00 |
-| Proyecto · 40 pts | carpeta `proyecto/` (repo del grupo) + defensa | Jueves 19-nov, 18:00 |
 
 El cuaderno calcula un escenario económico ilustrativo para la revisión de anomalías: costo de revisión de USD 117 (39 × USD 3), ahorro estimado de USD 2.430 (27 × 60% × USD 150) y beneficio neto de USD 2.313. Estas cifras dependen de supuestos definidos para el ejercicio (60% de detección y USD 150 de pérdida por fraude) y no constituyen ahorro observado ni garantía de prevención.
 
