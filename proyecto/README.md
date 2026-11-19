@@ -10,10 +10,10 @@ Gerardo Villalba
 
 El proyecto desarrolla una propuesta de segmentación de usuarios para FASTPAY a partir de sus perfiles demográficos, económicos y de comportamiento transaccional. El propósito es identificar grupos con características similares, reconocer perfiles atípicos y traducir los resultados en acciones diferenciadas de servicio, fidelización y monitoreo. Se trata de un enfoque no supervisado: los algoritmos de clustering no predicen directamente si un usuario cometerá fraude.
 La base de trabajo contiene 775 perfiles de usuario, construidos a partir de 2.996 transacciones limpias descargadas desde el servicio del proyecto. El diagnóstico reporta ausencia de valores nulos y de valores negativos en las variables numéricas revisadas. Se consideran variables como edad, ingreso mensual, antigüedad, número de transacciones, monto medio, actividad nocturna, uso de dispositivos nuevos, distancia media e intentos medios.   
-•	Se identificó una correlación elevada entre monto medio y monto máximo (aproximadamente 0,85); para evitar redundancia, monto máximo se excluyó de las variables de clustering y se conservó para interpretación.   
-•	Se construyeron tres variables derivadas: ratio_monto_ingreso, intensidad_transaccional e indice_riesgo_operativo.   
-•	La variable fraudes no se incorporó como característica de agrupamiento; se utilizó posteriormente para describir la incidencia de fraude por segmento.   
-•	Las variables categóricas de provincia se transformaron mediante variables indicadoras y las características se estandarizaron con StandardScaler.
+- Se identificó una correlación elevada entre monto medio y monto máximo (aproximadamente 0,85); para evitar redundancia, monto máximo se excluyó de las variables de clustering y se conservó para interpretación.   
+- Se construyeron tres variables derivadas: ratio_monto_ingreso, intensidad_transaccional e indice_riesgo_operativo.   
+- La variable fraudes no se incorporó como característica de agrupamiento; se utilizó posteriormente para describir la incidencia de fraude por segmento.   
+- Las variables categóricas de provincia se transformaron mediante variables indicadoras y las características se estandarizaron con StandardScaler.
 
 **2.	Modelo comparados (tabla de métricas)**
 
@@ -45,11 +45,11 @@ Los promedios siguientes describen cada grupo obtenido con K-Means. El porcentaj
 | 7 |	47 | 6,1% |	947,12 | 83,65|	4,09 | 0,34|	0,45 |
 
 Decision de negocio:   
-•	El segmento 1 presenta el mayor ingreso medio (USD 1.616,40), el mayor monto medio (USD 215,39) y el mayor promedio de fraudes (0,74 por usuario). El análisis del cuaderno indica que reúne 54 de los 290 fraudes observados (18,6%) con el 9,4% de los usuarios.   
-•	El segmento 0 combina un promedio de riesgo operativo elevado (0,43) y 0,56 fraudes por usuario; requiere atención reforzada.   
-•	El segmento 4 registra el menor promedio de fraudes (0,14) y un monto medio relativamente bajo (USD 60,98).   
-•	Isolation Forest identificó 39 usuarios (5,03% de la base). En ellos se contabilizaron 27 de los 290 fraudes observados (9,3%). La concentración es superior a su peso en la base, pero el resultado muestra una capacidad limitada para capturar el total de fraudes.   
-•	El porcentaje de anomalías dentro de cada segmento fue: segmento 0: 8,47%; 1: 12,33%; 2: 2,48%; 3: 12,12%; 4: 9,30%; 5: 0,39%; 6: 11,86%; y 7: 8,51%.   
+- El segmento 1 presenta el mayor ingreso medio (USD 1.616,40), el mayor monto medio (USD 215,39) y el mayor promedio de fraudes (0,74 por usuario). El análisis del cuaderno indica que reúne 54 de los 290 fraudes observados (18,6%) con el 9,4% de los usuarios.   
+- El segmento 0 combina un promedio de riesgo operativo elevado (0,43) y 0,56 fraudes por usuario; requiere atención reforzada.   
+- El segmento 4 registra el menor promedio de fraudes (0,14) y un monto medio relativamente bajo (USD 60,98).   
+- Isolation Forest identificó 39 usuarios (5,03% de la base). En ellos se contabilizaron 27 de los 290 fraudes observados (9,3%). La concentración es superior a su peso en la base, pero el resultado muestra una capacidad limitada para capturar el total de fraudes.   
+- El porcentaje de anomalías dentro de cada segmento fue: segmento 0: 8,47%; 1: 12,33%; 2: 2,48%; 3: 12,12%; 4: 9,30%; 5: 0,39%; 6: 11,86%; y 7: 8,51%.   
 El usuario señalado como más anómalo fue U0544, con score 0,6167. En el análisis SHAP del cuaderno, las variables destacadas fueron provincia (Manabí), distancia media, monto medio y ratio monto/ingreso. Estos resultados deben entenderse como explicación del comportamiento atípico según el modelo, no como evidencia de fraude ni como relación causal.
 
 **4.	Recomendaciones con cifras**
@@ -69,9 +69,9 @@ El cuaderno calcula un escenario económico ilustrativo para la revisión de ano
 
 **5.	Limitaciones y próximos pasos**
 
-•	La calidad de separación de los segmentos es moderada-baja según la silueta; conviene evaluar estabilidad, tamaños de grupo y otras métricas antes de considerar definitiva la solución.   
-•	Existe una diferencia entre la silueta máxima de la búsqueda (0,2016) y la silueta del K-Means final (0,1879), asociada a que el ajuste final utiliza una configuración distinta de inicializaciones. Para una versión definitiva, conviene repetir la búsqueda y el ajuste con la misma configuración.   
-•	Las reglas de acción generadas automáticamente en el código no coinciden completamente con la recomendación narrativa final, especialmente para el segmento 7. Se debe unificar esa lógica antes de implementar.   
-•	Isolation Forest detecta atipicidad, no fraude. Se recomienda usarlo como señal para revisión, no como criterio automático de bloqueo.   
-•	La interpretación SHAP debe validarse respecto de la salida exacta explicada por el modelo; los signos invertidos no deben asumirse como explicación correcta sin comprobar la reconstrucción del score.   
-•	Como siguiente paso, se recomienda probar un modelo probabilístico como Gaussian Mixture Models y comparar la solución con métricas adicionales y análisis de estabilidad, sin reemplazar los resultados actuales hasta contar con evidencia.   
+- La calidad de separación de los segmentos es moderada-baja según la silueta; conviene evaluar estabilidad, tamaños de grupo y otras métricas antes de considerar definitiva la solución.   
+- Existe una diferencia entre la silueta máxima de la búsqueda (0,2016) y la silueta del K-Means final (0,1879), asociada a que el ajuste final utiliza una configuración distinta de inicializaciones. Para una versión definitiva, conviene repetir la búsqueda y el ajuste con la misma configuración.   
+- Las reglas de acción generadas automáticamente en el código no coinciden completamente con la recomendación narrativa final, especialmente para el segmento 7. Se debe unificar esa lógica antes de implementar.   
+- Isolation Forest detecta atipicidad, no fraude. Se recomienda usarlo como señal para revisión, no como criterio automático de bloqueo.   
+- La interpretación SHAP debe validarse respecto de la salida exacta explicada por el modelo; los signos invertidos no deben asumirse como explicación correcta sin comprobar la reconstrucción del score.   
+- Como siguiente paso, se recomienda probar un modelo probabilístico como Gaussian Mixture Models y comparar la solución con métricas adicionales y análisis de estabilidad, sin reemplazar los resultados actuales hasta contar con evidencia.   
