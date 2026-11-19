@@ -35,14 +35,14 @@ Los promedios siguientes describen cada grupo obtenido con K-Means. El porcentaj
 
 | Segmento | Usuarios | Base | Ingreso medio (USD) | Monto medio (USD) | Transac. medias | Riesgo operativo | Fraudes medios |
 |---|---|---| 
-|0|	59|	7,6%|	888,14|	94,34|	4,08|	0,43|	0,56|
-|1|	73| 9,4%|	1.616,40|	215,39|	3,77|	0,52|	0,74|
-|2|	202|	26,1%|	910,81|	68,49|	3,89|	0,32|	0,36|
-|3|	33|	4,3%|	912,75|	90,79|	3,97|	0,32|	0,27|
-|4|	43|	5,5%|	898,70|	60,98|	3,63|	0,35|	0,14|
-|5|	259|	33,4%|	884,58|	64,30|	3,92|	0,24|	0,29|
-|6|	59|	7,6%|	955,99|	78,40|	3,37|	0,30|	0,36|
-|7|	47|	6,1%|	947,12|	83,65|	4,09|	0,34|	0,45|
+| 0 |	59 | 7,6% |	888,14 | 94,34 | 4,08 | 0,43 | 0,56| 
+| 1 |	73 | 9,4% |	1.616,40 | 215,39 | 3,77 | 0,52 | 0,74 |
+| 2 |	202 |	26,1% | 910,81 | 68,49 |	3,89 | 0,32 | 0,36 |
+| 3 |	33 | 4,3% | 912,75 | 90,79 | 3,97 | 0,32 | 0,27 |
+| 4 |	43 | 5,5% |	898,70 | 60,98 | 3,63 | 0,35 | 0,14 |
+| 5 |	259 | 33,4% |	884,58 | 64,30|	3,92 | 0,24 | 0,29 |
+| 6 |	59 | 7,6% |	955,99 | 78,40|	3,37 | 0,30|	0,36 |
+| 7 |	47 | 6,1% |	947,12 | 83,65|	4,09 | 0,34|	0,45 |
 
 Decision de negocio:
 •	El segmento 1 presenta el mayor ingreso medio (USD 1.616,40), el mayor monto medio (USD 215,39) y el mayor promedio de fraudes (0,74 por usuario). El análisis del cuaderno indica que reúne 54 de los 290 fraudes observados (18,6%) con el 9,4% de los usuarios.
