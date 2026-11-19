@@ -1,0 +1,29 @@
+{
+  "grupo": "Grupo 6",
+  "problema": "segmentacion",
+  "modelo": "K-Means (segmentación) + Isolation Forest (anomalías)",
+  "metricas": {
+    "silueta_kmeans": 0.1879,
+    "silueta_jerarquico": 0.201,
+    "n_clusters": 8,
+    "pct_anomalias": 5.03,
+    "fraudes_en_anomalos": 27
+  },
+  "hiperparametros": {
+    "k_optimo": 8,
+    "random_state": 42,
+    "n_init_kmeans": 50,
+    "contamination_isolation_forest": 0.05,
+    "eps_dbscan_percentil": 90,
+    "min_samples_dbscan": 10
+  },
+  "semilla": 42,
+  "semilla_datos": 365051,
+  "fecha": "2026-11-19 02:27",
+  "versiones": {
+    "python": "3.13.18",
+    "numpy": "2.4.6",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.6.1"
+  }
+}
