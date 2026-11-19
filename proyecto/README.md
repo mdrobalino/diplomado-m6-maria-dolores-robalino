@@ -55,7 +55,7 @@ El usuario señalado como más anómalo fue U0544, con score 0,6167. En el anál
 
 **4.	Recomendaciones con cifras**
 
-| Segmento | Lectura del perfil | Acción | propuesta |
+| Segmento | Lectura del perfil | Acción propuesta |
 |---|---|---|   
 | 1	| Mayor ingreso, monto medio y promedio de fraude. | Verificación reforzada y monitoreo continuo; considerar revisión adicional para transacciones de monto elevado.|
 | 0	| Riesgo operativo y fraude medio elevados. | Verificación adicional y revisión de señales operativas.|
