@@ -19,7 +19,8 @@ La base de trabajo contiene 775 perfiles de usuario, construidos a partir de 2.9
 
 Se compararon tres métodos de agrupamiento y un método complementario de detección de anomalías. K-Means se seleccionó como solución operativa; Ward se utilizó como contraste jerárquico y DBSCAN para explorar agrupaciones basadas en densidad. Isolation Forest se aplicó por separado para marcar usuarios con perfiles atípicos.
 
-| Método | Resultado | Lectura
+| Método | Resultado | Lectura |
+|---|---|---|   
 | K-Means | 8 grupos · silueta 0,1879	| Modelo principal seleccionado por facilidad de asignación de nuevos usuarios y lectura de centroides.|
 | Jerárquico Ward | 8 grupos · silueta 0,2010	| Obtuvo una silueta ligeramente mayor; se conserva como contraste.|
 | DBSCAN | 5 clusters · 32 usuarios ruido (4,1%) | Útil para detectar densidades y observaciones aisladas; no se eligió como segmentación principal.|
