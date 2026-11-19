@@ -1,10 +1,10 @@
-#Diplomado en Big Data e Inteligencia Artificial
-##Sistema de segmentación de usuarios
-##FASTPAY
-###Integrantes grupo 6:
-###Maria Dolores Robalino
-###Roxana Oñate Lazo
-###Gerardo Villalba
+#Diplomado en Big Data e Inteligencia Artificial   
+##Sistema de segmentación de usuarios   
+##FASTPAY   
+###Integrantes grupo 6:   
+###Maria Dolores Robalino   
+###Roxana Oñate Lazo   
+###Gerardo Villalba   
 
 1.	Problema y datos
 El proyecto desarrolla una propuesta de segmentación de usuarios para FASTPAY a partir de sus perfiles demográficos, económicos y de comportamiento transaccional. El propósito es identificar grupos con características similares, reconocer perfiles atípicos y traducir los resultados en acciones diferenciadas de servicio, fidelización y monitoreo. Se trata de un enfoque no supervisado: los algoritmos de clustering no predicen directamente si un usuario cometerá fraude.
