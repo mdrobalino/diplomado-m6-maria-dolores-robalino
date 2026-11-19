@@ -34,7 +34,7 @@ La silueta final de K-Means y Ward (aproximadamente 0,19–0,20) indica una sepa
 Los promedios siguientes describen cada grupo obtenido con K-Means. El porcentaje representa la participación de usuarios en la base. La columna de fraude corresponde al promedio de fraudes por usuario en el segmento, no a una probabilidad individual.
 
 | Segmento | Usuarios | Base | Ingreso medio (USD) | Monto medio (USD) | Transac. medias | Riesgo operativo | Fraudes medios |
-|---|---|---| 
+|---|---|---|---|---|---|---|---| 
 | 0 |	59 | 7,6% |	888,14 | 94,34 | 4,08 | 0,43 | 0,56| 
 | 1 |	73 | 9,4% |	1.616,40 | 215,39 | 3,77 | 0,52 | 0,74 |
 | 2 |	202 |	26,1% | 910,81 | 68,49 |	3,89 | 0,32 | 0,36 |
